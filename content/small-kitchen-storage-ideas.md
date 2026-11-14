@@ -1,4 +1,5 @@
-title: Tiny Kitchen? 7 Genius Storage Ideas That Make Every Inch Count
+title: 7 Genius Small Kitchen Storage Ideas That Save Space
+subtitle: Discover practical ways to organize cabinets, maximize vertical storage, and make the most of a tiny kitchen.
 description: Seven practical, renter-friendly storage ideas for small kitchens — from wall rails and shelf risers to slim rolling carts — with tips on measuring and choosing the right organizers.
 image: kitchen-after.jpg
 imagealt: A small galley kitchen with clear canisters, open shelves, a wall utensil rail and tidy butcher block counters

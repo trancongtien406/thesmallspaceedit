@@ -22,7 +22,7 @@ export default function About() {
         <li><strong>Corrections.</strong> If you spot an error, <Link href="/contact/">tell us</Link> and we will review and update the guide.</li>
       </ul>
       <h2>How We Choose Products</h2>
-      <p>We recommend product <em>types</em> that solve a specific small-space problem, and we describe the features that matter, the trade-offs (pros and cons), and the measurements to check. Prices and availability change often, so we send you to the current listing rather than quoting a price.</p>
+      <p>We recommend product <em>types</em> that solve a specific small-space problem, and we describe the features that matter, the trade-offs (pros and cons), and the measurements to check. Prices and availability change often, so we send you to the current listing rather than quoting a price. Read the full process in <Link href="/how-we-choose/">How We Choose Products</Link>.</p>
       <h2>Affiliate Transparency</h2>
       <p>Some links on this website may be affiliate links. We may earn a commission from qualifying purchases at no additional cost to you. Commissions never decide what we recommend. {SITE.disclosure} Read our full <Link href="/affiliate-disclosure/">affiliate disclosure</Link>.</p>
       <h2>Contact</h2>

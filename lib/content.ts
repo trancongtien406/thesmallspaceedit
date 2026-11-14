@@ -11,10 +11,10 @@ export type Guide = {
   slug: string; title: string; description: string; image: string; imagealt: string; category: string;
   primaryCategory: string; categories: string[]; blocks: Block[]; toc: TocItem[]; readingTime: number;
   publishedAt: string; updatedAt: string; author: string; faqs: { q: string; a: string }[];
-  heroImage: string; ogImage: string;
+  heroImage: string; ogImage: string; subtitle?: string;
 };
 
-// TODO: set real publish/update dates per guide when content changes
+// Dates are fixed in front matter (`published:` / `updated:`), never auto-changed on deploy. Set `updated:` only on a real content update.
 export const PUBLISHED = '2026-11-14';
 
 const ORDER = [
@@ -69,7 +69,7 @@ function parse(slug: string): Guide {
   return {
     slug, title: meta.title, description: meta.description, image: `/img/${slug}`, imagealt: meta.imagealt, category: meta.category,
     primaryCategory: tax.primary, categories: [tax.primary, ...(tax.also ?? [])], blocks, toc,
-    readingTime: Math.max(3, Math.round(words / 230)), publishedAt: PUBLISHED, updatedAt: PUBLISHED, author: 'The Small Space Edit',
+    readingTime: Math.max(3, Math.round(words / 230)), publishedAt: meta.published || PUBLISHED, updatedAt: meta.updated || meta.published || PUBLISHED, subtitle: meta.subtitle, author: 'The Small Space Edit',
     faqs: FAQS[slug] ?? [], heroImage: `/img/${slug}-hero`, ogImage: `/img/${slug}-og.jpg`,
   };
 }

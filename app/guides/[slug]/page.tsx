@@ -4,7 +4,8 @@ import ArticleCard from '@/components/article/ArticleCard';
 import AffiliateDisclosure from '@/components/article/AffiliateDisclosure';
 import FAQAccordion from '@/components/article/FAQAccordion';
 import TableOfContents, { TocMobile } from '@/components/article/TableOfContents';
-import ProductCard from '@/components/product/ProductCard';
+import ProductCard, { ImageLabel } from '@/components/product/ProductCard';
+import Link from 'next/link';
 import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import Pic from '@/components/ui/Pic';
@@ -38,6 +39,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const sameCat = all.filter((x) => x.slug !== slug && x.categories.some((c) => g.categories.includes(c)));
   const rel = [...sameCat, ...all.filter((x) => x.slug !== slug && !sameCat.includes(x))].slice(0, 3);
   const pin = PIN_MEDIA[slug];
+  // Review P0 #4: surface the main recommendation right after intro + TOC (anchor link, not an affiliate CTA)
+  const richProducts = g.blocks.flatMap((b) => (b.type === 'product' && b.product.features.length ? [b.product] : []));
+  const pick = richProducts.find((p) => p.badge === "Editor's Pick") ?? richProducts[0];
   const toc = [...g.toc, ...(g.faqs.length ? [{ id: 'faq', text: 'Frequently Asked Questions' }] : [])];
   const ld = { '@context': 'https://schema.org', '@type': 'BlogPosting', headline: g.title, description: g.description,
     image: [SITE.url + g.ogImage, `${SITE.url}${g.image}.jpg`], datePublished: g.publishedAt, dateModified: g.updatedAt,
@@ -50,14 +54,30 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       <header className="article-head">
         <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: cat.title, href: `/${cat.slug}/` }, { name: g.title.split(':')[0], href: `/guides/${slug}/` }]} />
         <h1>{g.title}</h1>
-        <p className="intro">{g.description}</p>
-        <div className="article-meta"><span>By {g.author}</span><span>Updated <time dateTime={g.updatedAt}>{fmt(g.updatedAt)}</time></span><span>{g.readingTime} min read</span></div>
+        <p className="intro">{g.subtitle ?? g.description}</p>
+        <div className="article-meta">
+          <span>By <Link href="/about/">{g.author}</Link></span>
+          <span>Published <time dateTime={g.publishedAt}>{fmt(g.publishedAt)}</time></span>
+          {g.updatedAt !== g.publishedAt && <span>Updated <time dateTime={g.updatedAt}>{fmt(g.updatedAt)}</time></span>}
+          <span>{g.readingTime} min read</span>
+        </div>
       </header>
-      <div className="article-hero"><Pic src={g.heroImage} alt={g.imagealt} width={1152} height={768} priority sizes="(max-width: 1040px) 100vw, 1000px" /></div>
+      <div className="article-hero"><Pic src={g.heroImage} alt={g.imagealt} width={1152} height={768} priority sizes="(max-width: 1040px) 100vw, 1000px" /><ImageLabel /></div>
       <AffiliateDisclosure />
       <div className="article-layout">
         <article className="prose">
           <TocMobile items={toc} />
+          {pick && (
+            <a className="quick-pick" href={`#pick-${pick.id}`}>
+              {pick.image && <picture><source srcSet={`${pick.image}.webp`} type="image/webp" /><img src={`${pick.image}.jpg`} alt="" width={96} height={96} loading="lazy" /></picture>}
+              <span className="qp-body">
+                <span className="qp-label">{pick.badge === "Editor's Pick" ? "Editor's Pick" : 'Top pick in this guide'}</span>
+                <strong>{pick.name}</strong>
+                <span className="qp-desc">{pick.description}</span>
+                <span className="qp-link">See details, fit tips and trade-offs ↓</span>
+              </span>
+            </a>
+          )}
           {g.blocks.map((b, i) => b.type === 'html'
             ? <div key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
             : <ProductCard key={i} product={b.product} position={b.position} articleSlug={slug} />)}

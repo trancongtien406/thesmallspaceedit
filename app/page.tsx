@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import ArticleCard from '@/components/article/ArticleCard';
 import CategoryCard from '@/components/home/CategoryCard';
-import ProductCard from '@/components/product/ProductCard';
+import { SolutionCard } from '@/components/product/ProductCard';
 import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Pic from '@/components/ui/Pic';
@@ -49,8 +49,9 @@ export default function Home() {
       </div></section>
 
       <section className="section"><div className="container">
-        <SectionHeading eyebrow="Small space favorites" title="Organizers worth considering" intro="Product types we recommend most often in our guides. We list what to check, not made-up ratings or prices." />
-        <div className="product-grid four">{FAVORITES.map((p, i) => <ProductCard key={p.id} product={p} position={i + 1} articleSlug="home" />)}</div>
+        <SectionHeading eyebrow="Small space solutions" title="Small Space Solutions" intro="The product types we recommend most often. Each guide explains what to measure, the trade-offs, and how to choose." />
+        <div className="product-grid three">{FAVORITES.map((p, i) => <SolutionCard key={p.id} product={p} position={i + 1} />)}</div>
+        <p className="section-note">Images are illustrative. Recommendations are based on product specifications and available product information. <Link href="/how-we-choose/">How we choose products</Link></p>
       </div></section>
 
       <section className="section" style={{ paddingTop: 0 }}><div className="container">

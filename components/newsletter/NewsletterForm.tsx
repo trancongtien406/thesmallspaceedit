@@ -29,13 +29,13 @@ export default function NewsletterForm({ variant = 'full', id = 'newsletter' }: 
   return (
     <section className={`newsletter ${variant === 'small' ? 'small' : ''}`} id={id} aria-labelledby={`${id}-title`}>
       <h2 id={`${id}-title`}>Make Every Inch Count</h2>
-      <p>Get practical home organization ideas and thoughtful small-space inspiration delivered to your inbox.</p>
+      <p>Get practical small-space organization ideas, renter-friendly tips, and thoughtful home finds delivered to your inbox.</p>
       {state === 'success' ? (
         <p className="nl-msg ok" role="status">✓ Thanks! Our newsletter is launching soon. (Signups are not connected yet, so your email was not saved.)</p>
       ) : (
         <form className="nl-form" onSubmit={onSubmit} noValidate>
           <label htmlFor={inputId} className="sr-only">Your email address</label>
-          <input id={inputId} type="email" name="email" autoComplete="email" placeholder="Your email address" value={email}
+          <input id={inputId} type="email" name="email" autoComplete="email" placeholder="Email address" value={email}
             onChange={(e) => { setEmail(e.target.value); if (state === 'invalid') setState('idle'); }}
             aria-invalid={state === 'invalid'} aria-describedby={`${id}-msg`} />
           <button className="btn btn-primary" type="submit" disabled={state === 'loading'} aria-busy={state === 'loading'}>
@@ -48,7 +48,8 @@ export default function NewsletterForm({ variant = 'full', id = 'newsletter' }: 
         {state === 'already' && <p className="nl-msg ok">You&apos;re already on the list. Thanks!</p>}
         {state === 'error' && <p className="nl-msg err">⚠ Something went wrong. Please try again.</p>}
       </div>
-      <p className="nl-consent">By subscribing, you agree to receive emails from The Small Space Edit. Unsubscribe anytime. See our <Link href="/privacy-policy/">Privacy Policy</Link>.</p>
+      <p className="nl-note">No clutter. Just useful ideas for a more organized home. Unsubscribe anytime.</p>
+      <p className="nl-consent">By subscribing, you agree to receive emails from The Small Space Edit. See our <Link href="/privacy-policy/">Privacy Policy</Link>.</p>
     </section>
   );
 }
