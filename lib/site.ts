@@ -1,15 +1,20 @@
-// Central site config. Change brand/URL/email here.
+// Site settings derived from the brand config (content/settings/brand.json). Edit that file (or /keystatic), not this one.
+import { BRAND } from './brand';
+
+// Amazon Associates required disclosure — exact wording, intentionally NOT editable in the CMS.
+export const AMAZON_DISCLOSURE = 'As an Amazon Associate I earn from qualifying purchases.';
+
 export const SITE = {
-  name: 'The Small Space Edit',
-  slogan: 'Small spaces. Smarter living.',
-  // TODO: set NEXT_PUBLIC_SITE_URL in Vercel to the final domain (e.g. https://thesmallspaceedit.com)
-  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://thesmallspaceedit.vercel.app').replace(/\/$/, ''),
-  pinterest: 'https://www.pinterest.com/thesmallspaceedit_/',
-  email: 'hello@example.com', // TODO: replace with the real contact email
-  disclosure: 'As an Amazon Associate I earn from qualifying purchases.',
-  description:
-    'Practical, renter-friendly storage and organization ideas for small apartments: tiny kitchens, no-drill bathrooms, small closets and space-saving finds.',
-  // TODO: Pinterest domain claim — set NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY to the code from
-  // Pinterest > Settings > Claimed accounts. It renders <meta name="p:domain_verify" content="..."> on every page.
-  pinterestVerify: process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY || '55074de4f4e10a27c7a45244f5f9fc36',
+  name: BRAND.name,
+  slogan: BRAND.slogan,
+  tagline: BRAND.tagline,
+  // NEXT_PUBLIC_SITE_URL (Vercel env) overrides brand.siteUrl, e.g. once a custom domain is connected
+  url: (process.env.NEXT_PUBLIC_SITE_URL || BRAND.siteUrl || 'https://thesmallspaceedit.vercel.app').replace(/\/$/, ''),
+  pinterest: BRAND.pinterestUrl,
+  email: BRAND.email, // TODO: replace hello@example.com with the real contact email (brand.json / CMS)
+  disclosure: AMAZON_DISCLOSURE,
+  description: BRAND.description,
+  author: BRAND.author || BRAND.name,
+  // Pinterest domain claim: <meta name="p:domain_verify">. Env var overrides the brand.json value.
+  pinterestVerify: process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY || BRAND.pinterestVerify || '',
 };

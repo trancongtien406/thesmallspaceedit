@@ -5,7 +5,7 @@ import ProductCard from '@/components/product/ProductCard';
 import NewsletterForm from '@/components/newsletter/NewsletterForm';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Pic from '@/components/ui/Pic';
+import Pic, { hasExt } from '@/components/ui/Pic';
 import { getGuidesInCategory } from '@/lib/content';
 import { CATEGORIES, getCategory } from '@/lib/taxonomy';
 import { SITE } from '@/lib/site';
@@ -14,7 +14,7 @@ import type { Product } from '@/lib/products';
 export function categoryMetadata(slug: string): Metadata {
   const c = getCategory(slug)!;
   return { title: c.h1, description: c.description.slice(0, 158), alternates: { canonical: `/${slug}/` },
-    openGraph: { title: c.h1, description: c.description, url: `/${slug}/`, images: [{ url: `${c.image}.jpg`, width: 1152, height: 768, alt: c.imageAlt }] } };
+    openGraph: { title: c.h1, description: c.description, url: `/${slug}/`, images: [{ url: hasExt(c.image) ? c.image : `${c.image}.jpg`, width: 1152, height: 768, alt: c.imageAlt }] } };
 }
 
 export default function CategoryPage({ slug }: { slug: string }) {

@@ -1,10 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { DM_Sans, Playfair_Display } from 'next/font/google';
-import './globals.css';
-import SiteHeader from '@/components/layout/SiteHeader';
-import SiteFooter from '@/components/layout/SiteFooter';
 import { SITE } from '@/lib/site';
-import MotionObserver from '@/components/motion/MotionObserver';
+import { BRAND, brandCssVars } from '@/lib/brand';
 
 // Runs before first paint: enables hide-then-reveal only when motion is allowed and IO exists; failsafe un-hides after 3 s.
 const MOTION_BOOT = `(function(){try{var d=document.documentElement;if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){d.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('js-motion')},3000)}}catch(e){}})();`;
@@ -15,7 +12,7 @@ const heading = Playfair_Display({ subsets: ['latin'], weight: ['500', '600'], v
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `${SITE.name} — Small Space Organization & Renter-Friendly Storage Ideas`, template: `%s | ${SITE.name}` },
+  title: { default: BRAND.seoTitle || SITE.name, template: `%s | ${SITE.name}` },
   description: SITE.description,
   openGraph: { type: 'website', siteName: SITE.name, locale: 'en_US', images: [{ url: '/img/home-og.jpg', width: 1200, height: 630 }] },
   twitter: { card: 'summary_large_image' },
@@ -29,15 +26,8 @@ export const viewport: Viewport = { themeColor: '#F7F4ED', width: 'device-width'
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-US" className={`${body.variable} ${heading.variable}`} suppressHydrationWarning>
-      <head><script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} /></head>
-      <body>
-        <div id="scroll-sentinel" aria-hidden="true" />
-        <a className="skip-link" href="#main">Skip to content</a>
-        <SiteHeader />
-        <main id="main">{children}</main>
-        <SiteFooter />
-        <MotionObserver />
-      </body>
+      <head><script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} />{brandCssVars() && <style id="brand-colors" dangerouslySetInnerHTML={{ __html: brandCssVars() }} />}</head>
+      <body>{children}</body>
     </html>
   );
 }

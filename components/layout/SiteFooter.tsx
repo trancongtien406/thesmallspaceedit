@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
-          <div className="fbrand"><span className="brand-name">{SITE.name}</span><p style={{ marginTop: 8 }}>{SITE.slogan}<br />Practical organization ideas for small apartments and renters.</p></div>
+          <div className="fbrand"><span className="brand-name">{SITE.name}</span><p style={{ marginTop: 8 }}>{SITE.slogan}<br />{SITE.tagline}</p></div>
           <div><h3>Explore</h3><ul>{CATEGORIES.slice(0, 4).map((c) => <li key={c.slug}><Link href={`/${c.slug}/`}>{c.title}</Link></li>)}<li><Link href="/guides/">All Guides</Link></li></ul></div>
           <div><h3>About</h3><ul><li><Link href="/about/">Our Story</Link></li><li><Link href="/contact/">Contact</Link></li><li><Link href="/about/#editorial-standards">Editorial Standards</Link></li><li><Link href="/how-we-choose/">How We Choose Products</Link></li></ul></div>
           <div><h3>Information</h3><ul><li><Link href="/affiliate-disclosure/">Affiliate Disclosure</Link></li><li><Link href="/privacy-policy/">Privacy Policy</Link></li></ul></div>

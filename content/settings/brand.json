@@ -1,0 +1,98 @@
+{
+  "name": "The Small Space Edit",
+  "slogan": "Small spaces. Smarter living.",
+  "seoTitle": "The Small Space Edit — Small Space Organization & Renter-Friendly Storage Ideas",
+  "tagline": "Practical organization ideas for small apartments and renters.",
+  "description": "Practical, renter-friendly storage and organization ideas for small apartments: tiny kitchens, no-drill bathrooms, small closets and space-saving finds.",
+  "siteUrl": "https://thesmallspaceedit.vercel.app",
+  "email": "hello@example.com",
+  "author": "The Small Space Edit",
+  "pinterestUrl": "https://www.pinterest.com/thesmallspaceedit_/",
+  "pinterestVerify": "55074de4f4e10a27c7a45244f5f9fc36",
+  "hero": {
+    "eyebrow": "Small-space living, made practical",
+    "titleLine1": "Small Spaces.",
+    "titleLine2": "Smarter Living.",
+    "lead": "Thoughtful storage ideas, practical home finds, and renter-friendly inspiration to help you make the most of every inch.",
+    "image": "/img/home-hero",
+    "imageAlt": "A bright, organized small apartment living room with a storage ottoman, floating shelves and a slim rolling cart",
+    "trust": [
+      "Renter-friendly ideas",
+      "Measuring tips in every guide",
+      "No fake reviews"
+    ]
+  },
+  "colors": {
+    "background": "#F7F4ED",
+    "surface": "#FFFFFF",
+    "surfaceMuted": "#EEEAE1",
+    "cream": "#E8E6DB",
+    "sand": "#D8C6AE",
+    "sage": "#819582",
+    "sageLight": "#E7EDE6",
+    "terracotta": "#B87555",
+    "forest": "#263C34",
+    "forestLight": "#496557",
+    "forestDark": "#1C3029",
+    "textPrimary": "#292D29",
+    "textSecondary": "#6B6C63",
+    "border": "#E7E2D8"
+  },
+  "categories": [
+    {
+      "slug": "small-kitchen",
+      "title": "Small Kitchen",
+      "short": "Kitchen",
+      "h1": "Small Kitchen Organization Ideas",
+      "description": "A tiny kitchen can work as hard as a big one when every cabinet, wall and gap has a job. These guides cover cabinet shelf risers, under-sink organizers, wall rails and slim rolling carts, with honest advice on measuring and choosing renter-friendly organizers that make cooking in a small apartment kitchen easier and calmer.",
+      "image": "/img/cat-small-kitchen",
+      "imageAlt": "Small kitchen with a sage green rolling cart, glass canisters, a magnetic knife strip and a wall utensil rail"
+    },
+    {
+      "slug": "bathroom-storage",
+      "title": "Bathroom Storage",
+      "short": "Bathroom",
+      "h1": "Small Bathroom Storage Ideas",
+      "description": "Apartment bathrooms rarely come with enough storage, and most leases rule out drilling into tile. Our bathroom guides focus on no-drill solutions such as over-the-toilet shelves, tension pole caddies, over-the-door hooks and vanity organizers, plus installation tips that protect your walls and your security deposit.",
+      "image": "/img/cat-bathroom-storage",
+      "imageAlt": "Narrow bathroom with a wooden over-the-toilet shelf holding rolled sage towels and woven baskets"
+    },
+    {
+      "slug": "closet-organization",
+      "title": "Closet Organization",
+      "short": "Closet",
+      "h1": "Small Closet Organization Ideas",
+      "description": "One small reach-in closet can hold far more than you think. These guides walk through slim hangers, double hang rods, hanging shelves, door storage and vacuum storage bags for off-season clothes, so you can keep everything visible, reachable and out of the chair pile in a small bedroom.",
+      "image": "/img/cat-closet-organization",
+      "imageAlt": "Small reach-in closet with matching hangers, a hanging shelf organizer, fabric bins and an over-the-door shoe organizer"
+    },
+    {
+      "slug": "renter-friendly",
+      "title": "Renter-Friendly",
+      "short": "Renter-Friendly",
+      "h1": "Renter-Friendly Organization Ideas",
+      "description": "No holes, no paint, no problem. Our renter-friendly guides collect damage-free ways to add storage and style to a rental apartment, including adhesive hooks, tension rods, freestanding shelves and plug-in lighting, along with tips for removing everything cleanly when your lease ends.",
+      "image": "/img/cat-renter-friendly",
+      "imageAlt": "Rental apartment corner with adhesive wall hooks, a floating shelf, a plug-in wall sconce and a console table with baskets"
+    },
+    {
+      "slug": "space-saving-furniture",
+      "title": "Space-Saving Furniture",
+      "short": "Furniture",
+      "h1": "Space-Saving Furniture for Small Apartments",
+      "description": "In a small apartment, every piece of furniture should earn its spot. These guides cover storage ottomans, rolling carts, over-the-toilet units and other multi-purpose pieces, explaining what to measure and which features matter so you can add storage without crowding the room.",
+      "image": "/img/cat-space-saving-furniture",
+      "imageAlt": "Beige storage ottoman with its lid open showing folded blankets beside a cream sofa"
+    }
+  ],
+  "featuredGuides": [
+    "small-kitchen-storage-ideas",
+    "no-drill-bathroom-storage",
+    "space-saving-amazon-finds"
+  ],
+  "homepageProducts": [
+    "slim-rolling-cart",
+    "over-toilet-shelf",
+    "storage-ottoman"
+  ]
+}

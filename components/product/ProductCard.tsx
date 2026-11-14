@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Product } from '@/lib/products';
 import { SITE } from '@/lib/site';
+import Pic from '@/components/ui/Pic';
 
 // Only real Amazon Associates links are rendered as an active CTA. Otherwise: "Product link coming soon".
 export const isValidAffiliate = (u?: string) => !!u && /^https:\/\/(www\.)?(amazon\.com|amzn\.to)\//.test(u);
@@ -16,7 +17,7 @@ function ProductImage({ p }: { p: Product }) {
   if (!p.image) return null;
   return (
     <div className="pimg">
-      <picture><source srcSet={`${p.image}.webp`} type="image/webp" /><img src={`${p.image}.jpg`} alt={p.imageAlt ?? p.name} width={600} height={600} loading="lazy" decoding="async" /></picture>
+      <Pic src={p.image} alt={p.imageAlt ?? p.name} width={600} height={600} />
       <ImageLabel type={p.imageType} />
     </div>
   );
