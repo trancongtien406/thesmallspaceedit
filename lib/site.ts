@@ -11,5 +11,5 @@ export const SITE = {
     'Practical, renter-friendly storage and organization ideas for small apartments: tiny kitchens, no-drill bathrooms, small closets and space-saving finds.',
   // TODO: Pinterest domain claim — set NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY to the code from
   // Pinterest > Settings > Claimed accounts. It renders <meta name="p:domain_verify" content="..."> on every page.
-  pinterestVerify: process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY || '',
+  pinterestVerify: process.env.NEXT_PUBLIC_PINTEREST_DOMAIN_VERIFY || '55074de4f4e10a27c7a45244f5f9fc36',
 };
