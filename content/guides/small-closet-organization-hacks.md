@@ -30,7 +30,7 @@ No organizer can fix a closet that's simply over capacity. Before buying anythin
 
 Bulky plastic and wooden hangers take up a lot of rod space. Slim non-slip hangers (often velvet-flocked) can free up a significant amount of room and keep clothes from sliding off. Matching hangers also make the closet look instantly calmer.
 
-{% product name="Slim non-slip velvet hangers" why="Save rod space and stop clothes from slipping." /%}
+{% product name="Slim non-slip velvet hangers" why="Save rod space and stop clothes from slipping." product="velvet-hangers" /%}
 
 ## 2. Add a second hanging rod
 
@@ -48,7 +48,7 @@ A hanging shelf organizer attaches to the rod with hook-and-loop straps and crea
 
 The shelf above the rod is often a jumble of random items. Matching fabric bins or lidded boxes make that space usable. Group items by category — workout clothes, swimwear, accessories — and add labels so you remember what's where.
 
-{% product name="Fabric storage bins with handles" why="Make the top shelf usable and tidy." /%}
+{% product name="Fabric storage bins with handles" why="Make the top shelf usable and tidy." product="fabric-storage-cubes" /%}
 
 ## 5. Put the back of the door to work
 

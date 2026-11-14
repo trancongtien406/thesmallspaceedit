@@ -42,6 +42,10 @@ The wall above the toilet is the single biggest unused area in most small bathro
 
 {% product name="Freestanding over-the-toilet storage shelf" why="Adds 2–3 shelves with zero wall mounting." product="over-toilet-shelf" /%}
 
+**Short on wall space beside the toilet?** A slim freestanding stand keeps spare rolls within reach without a wall-mounted holder or anything balanced on the tank lid.
+
+{% product name="Freestanding toilet paper holder" why="Holds spare rolls beside the toilet with nothing mounted." product="toilet-paper-stand" /%}
+
 ## 2. Add a tension pole caddy in the shower
 
 A tension pole shower caddy wedges between the tub edge (or floor) and the ceiling using spring pressure. It adds several shelves in the corner of your shower without a single hole.
@@ -54,7 +58,13 @@ Look for rust-resistant materials like stainless steel or aluminum, and shelves 
 
 For lighter loads — a bottle of shampoo, a razor, a loofah — adhesive corner shelves on smooth tile are great. Place them where you naturally reach in the shower, and keep heavy refill bottles elsewhere.
 
-{% product name="Adhesive corner shower shelf" why="Holds everyday bottles on smooth tile without drilling." /%}
+{% product name="Adhesive shower caddy set" why="Wall shelves, soap holders and a toothbrush holder on smooth tile, no drilling." product="adhesive-shower-caddy" /%}
+
+**Surface matters:** adhesive caddies are for smooth, non-porous tile, glass or metal, not painted or textured walls. Let the adhesive set for 24 hours before loading.
+
+If adhesive won't hold on your tile, or you'd rather not stick anything to the wall at all, a caddy that hangs over the shower arm is the simplest alternative. Check that your shower head has a standard arm with a little space above it.
+
+{% product name="Hanging shower caddy" why="Hangs over the shower arm: no drilling and no adhesive." product="hanging-shower-caddy" /%}
 
 ## 4. Hang towels and robes over the door
 

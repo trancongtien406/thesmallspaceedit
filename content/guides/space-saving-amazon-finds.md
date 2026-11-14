@@ -65,7 +65,7 @@ The area under a bed is often the largest unused storage zone in a small apartme
 - Lids or zip covers to keep dust out
 - If your bed is too low, bed risers can add clearance (check stability)
 
-{% product name="Rolling under-bed storage drawers" why="Uses the biggest unused space in most bedrooms." /%}
+{% product name="Rolling under-bed storage drawers" why="Uses the biggest unused space in most bedrooms." product="under-bed-rolling-drawers" /%}
 
 ## 4. A storage ottoman (or ottoman bench)
 
@@ -104,7 +104,7 @@ Damage-free adhesive hooks give you wall storage without nails. Use them by the 
 - Instructions for clean removal (important for your deposit)
 - A style that matches your space — they come in wood, metal and minimal white
 
-{% product name="Damage-free adhesive wall hooks" why="Wall storage for bags and keys without nails." /%}
+{% product name="Damage-free adhesive wall hooks" why="Wall storage for bags and keys without nails." product="command-utility-hooks" /%}
 
 ## How to decide what to buy first
 

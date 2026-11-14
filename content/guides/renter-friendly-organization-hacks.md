@@ -22,7 +22,7 @@ Renting comes with a familiar set of rules: no holes, no paint, no permanent cha
 
 Adhesive hooks are the renter's best friend. Use them for keys by the door, bags in the entryway, towels in the bathroom, and measuring cups inside cabinet doors. Choose a weight rating above what you'll hang and follow the removal instructions exactly when you move.
 
-{% product name="Removable adhesive hooks (variety pack)" why="Damage-free hanging for keys, bags and towels." /%}
+{% product name="Removable adhesive hooks (variety pack)" why="Damage-free hanging for keys, bags and towels." product="command-utility-hooks" /%}
 
 ## 2. Tension rods aren't just for showers
 
@@ -68,7 +68,7 @@ A rolling cart can be a coffee station, bathroom shelf, nightstand or craft cadd
 
 Bed risers lift your bed several inches, creating room for under-bed storage drawers. Make sure risers are stable and rated for your bed's weight, and use rolling drawers so you can access items easily.
 
-{% product name="Under-bed storage drawers" why="Use the space beneath the bed for seasonal items." /%}
+{% product name="Under-bed storage drawers" why="Use the space beneath the bed for seasonal items." product="under-bed-rolling-drawers" /%}
 
 ## 11. Swap hardware — and keep the originals
 
