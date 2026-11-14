@@ -41,11 +41,11 @@ export default function CategoryPage({ slug }: { slug: string }) {
       </div></section>}
       {rest.length > 0 && <section className="section"><div className="container">
         <SectionHeading eyebrow="Latest guides" title={`More ${c.title.toLowerCase()} ideas`} />
-        <div className="card-grid">{rest.map((g) => <ArticleCard key={g.slug} g={g} />)}</div>
+        <div className="card-grid reveal-group" data-stagger="50" data-stagger-max="250">{rest.map((g) => <ArticleCard key={g.slug} g={g} />)}</div>
       </div></section>}
       {products.length > 0 && <section className="section section-muted"><div className="container">
         <SectionHeading eyebrow={`Shop ${c.title.toLowerCase()} favorites`} title="Organizers we recommend" intro="Generic product types from our guides. Always check dimensions before you buy." />
-        <div className="product-grid">{products.slice(0, 4).map((p, i) => <ProductCard key={p.id} product={p} position={i + 1} articleSlug={slug} />)}</div>
+        <div className="product-grid reveal-group" data-stagger="55" data-stagger-max="220">{products.slice(0, 4).map((p, i) => <ProductCard key={p.id} product={p} position={i + 1} articleSlug={slug} />)}</div>
       </div></section>}
       <section className="section"><div className="container">
         <SectionHeading title="Related categories" />

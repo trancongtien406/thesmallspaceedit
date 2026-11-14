@@ -9,7 +9,7 @@ function useActive(items: TocItem[]) {
     const obs = new IntersectionObserver((entries) => {
       const vis = entries.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
       if (vis[0]) setActive(vis[0].target.id);
-    }, { rootMargin: '-90px 0px -65% 0px' });
+    }, { rootMargin: '-15% 0px -70% 0px', threshold: 0 });
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();
   }, [items]);

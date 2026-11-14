@@ -27,7 +27,7 @@ export default function NewsletterForm({ variant = 'full', id = 'newsletter' }: 
   };
   const inputId = `${id}-email`;
   return (
-    <section className={`newsletter ${variant === 'small' ? 'small' : ''}`} id={id} aria-labelledby={`${id}-title`}>
+    <section className={`newsletter ${variant === 'small' ? 'small' : 'reveal'}`} id={id} aria-labelledby={`${id}-title`}>
       <h2 id={`${id}-title`}>Make Every Inch Count</h2>
       <p>Get practical small-space organization ideas, renter-friendly tips, and thoughtful home finds delivered to your inbox.</p>
       {state === 'success' ? (

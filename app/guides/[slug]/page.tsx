@@ -93,7 +93,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       </div>
       <section className="section"><div className="container">
         <h2 style={{ marginBottom: 24 }}>Related Articles</h2>
-        <div className="card-grid">{rel.map((x) => <ArticleCard key={x.slug} g={x} />)}</div>
+        <div className="card-grid reveal-group" data-stagger="50" data-stagger-max="250">{rel.map((x) => <ArticleCard key={x.slug} g={x} />)}</div>
       </div></section>
       <section className="container"><NewsletterForm /></section>
     </>

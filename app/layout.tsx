@@ -4,6 +4,10 @@ import './globals.css';
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import { SITE } from '@/lib/site';
+import MotionObserver from '@/components/motion/MotionObserver';
+
+// Runs before first paint: enables hide-then-reveal only when motion is allowed and IO exists; failsafe un-hides after 3 s.
+const MOTION_BOOT = `(function(){try{var d=document.documentElement;if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){d.classList.add('js-motion');setTimeout(function(){if(!window.__motionReady)d.classList.remove('js-motion')},3000)}}catch(e){}})();`;
 
 // Self-hosted at build time by next/font (spec §1.2)
 const body = DM_Sans({ subsets: ['latin'], variable: '--font-body', display: 'swap' });
@@ -24,12 +28,15 @@ export const viewport: Viewport = { themeColor: '#F7F4ED', width: 'device-width'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-US" className={`${body.variable} ${heading.variable}`}>
+    <html lang="en-US" className={`${body.variable} ${heading.variable}`} suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} /></head>
       <body>
+        <div id="scroll-sentinel" aria-hidden="true" />
         <a className="skip-link" href="#main">Skip to content</a>
         <SiteHeader />
         <main id="main">{children}</main>
         <SiteFooter />
+        <MotionObserver />
       </body>
     </html>
   );
